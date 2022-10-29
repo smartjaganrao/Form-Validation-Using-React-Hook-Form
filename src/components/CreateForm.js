@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FormA from "./FormA";
 import FormB from "./FormB";
 import FormC from "./FormC";
@@ -27,9 +27,9 @@ function CreateForm() {
             
       <div className="RightContent">
 
-      {(select == "FormA") ? <FormA/> : "" }
-      {(select == "FormB") ? <FormB/> : "" }
-      {(select == "FormC") ? <FormC/> : "" }
+      {(select === "FormA") ? <FormA/> : "" }
+      {(select === "FormB") ? <FormB/> : "" }
+      {(select === "FormC") ? <FormC/> : "" }
 
       </div>
       
