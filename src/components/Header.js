@@ -6,7 +6,7 @@ function Header() {
       <nav>
         <ul>
           <li>
-            <Link  to="/CreateForm" >CreateForm</Link>
+            <Link  to="/" >CreateForm</Link>
           </li>
 
           <li>

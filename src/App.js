@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Header />}>
-        <Route path="CreateForm" element={<CreateForm />} />
+        <Route exact index path="/" element={<CreateForm />} />
           <Route path="FormA" element={<FormA />} />
           <Route path="FormB" element={<FormB />} />
           <Route path="FormC" element={<FormC />} />
