@@ -1,38 +1,58 @@
 import {useForm} from 'react-hook-form';
+import {useState, useEffect} from 'react';
+import {useNavigate, useParams, useLocation, useHistory } from 'react-router-dom';
 
 let renderCount = 0;
 
-function FormA() {
+function FormA() 
+{
 
-  const {register, handleSubmit, formState : {errors}, watch} = useForm(
-    {
-      defaultValues:
-      {
-        firstName: "Jagan"
-      }
-    }
-  );
+let navigate = useNavigate();
+const [empdata, setEmpData] = useState();
+const [submitstatus, setSubmitStatus] = useState(false);
+const locationnew = useLocation();
+
+const {register, handleSubmit,setValue, formState : {errors}} = useForm(
+);
+
+useEffect(() => 
+{
+
+if (submitstatus) 
+{ 
+    navigate('/FormA', { state: empdata });
+}
+
+if(locationnew.state == null)
+{
+}
+else
+{
+  setValue("firstName", locationnew.state.firstName)
+  setValue("lastName", locationnew.state.lastName)
+  setValue("empNumber", locationnew.state.empNumber)
+  setValue("Age", locationnew.state.Age)
+  setValue("mobileNumber", locationnew.state.mobileNumber)
+}
+
+}, [submitstatus]);
+
 
   console.log(errors);
-  console.log(watch('firstName'));
-
   renderCount++;
 
-    return (
-      <div className="">
-
+  return (
+    <div className="">
     Render Count: {renderCount}
-
    <h3> Form Validation using React Hook Form Library </h3>
-
    <h4> Employee Registration Form: </h4>
 
-    <form onSubmit={handleSubmit( (data) => {
-
-       console.log(data);
-      //  alert("FirstName: " + data.firstName + "\nLastName: " + data.lastName + "\nEmp NO: " + data.empNumber + "\nAge: " + data.Age + "\nMobile No: " + data.mobileNumber );
+    <form onSubmit={handleSubmit((data) => 
+    {
+      setEmpData(data);
+      setSubmitStatus(true);
       alert(JSON.stringify(data, null, 2));
-      })}>
+    })}>
 
       <label>First Name:
         <input {...register(`firstName`, {required : 'FirstName is Required'})} type="text" placeholder="First Name"  /> <br/>    
@@ -61,10 +81,9 @@ function FormA() {
 
       <br/>
       <input type="submit" id="submit" value="submit" />
-      
-    </form>
+     </form>
 
-      </div>
+     </div>
     );
   }
   

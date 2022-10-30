@@ -27,9 +27,9 @@ function CreateForm() {
             
       <div className="RightContent">
 
-      {(select === "FormA") ? <FormA/> : "" }
-      {(select === "FormB") ? <FormB/> : "" }
-      {(select === "FormC") ? <FormC/> : "" }
+      {(select === "FormA") ? <FormA /> : "" }
+      {(select === "FormB") ? <FormB /> : "" }
+      {(select === "FormC") ? <FormC /> : "" }
 
       </div>
       

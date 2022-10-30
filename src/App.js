@@ -12,7 +12,6 @@ function App() {
   return (
     <div className="Header">
 
-
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Header />}>
@@ -23,8 +22,6 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-
-
     
     </div>
   );

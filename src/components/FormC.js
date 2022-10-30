@@ -1,21 +1,49 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import {useState, useEffect} from 'react';
 import * as yup from "yup";
 
+import {useNavigate, useParams, useLocation, useHistory } from 'react-router-dom';
+
 const schema = yup.object({
-
   regNo: yup.string().required('Reg Number is required'),
-  firstname: yup.string().required('firstname is required'),
+  firstName: yup.string().required('FirstName is required'),
+  lastName: yup.string().required('LastName is required'),
   gender: yup.string().required('Gender is required')
-  
-
 }).required();
 
 function FormC() {
 
-  const { register, handleSubmit, formState:{ errors } } = useForm({
+let navigate = useNavigate();
+const [studentdata, setStudentData] = useState();
+const [submitstatus, setSubmitStatus] = useState(false);
+const locationnew = useLocation();
+
+  const { register, handleSubmit,setValue, formState:{ errors } } = useForm({
     resolver: yupResolver(schema)
   });
+
+  useEffect(() => 
+{
+
+if (submitstatus) 
+{ 
+    navigate('/FormC', { state: studentdata });
+}
+
+if(locationnew.state == null)
+{
+}
+else
+{
+  setValue("regNo", locationnew.state.regNo)
+  setValue("firstName", locationnew.state.firstName)
+  setValue("lastName", locationnew.state.lastName)
+  setValue("gender", locationnew.state.gender)
+}
+
+}, [submitstatus]);
+
 
     return (
       <div className="">
@@ -23,7 +51,8 @@ function FormC() {
   <h3> Student Registration Form using Yup library</h3>
 
 <form onSubmit={handleSubmit ( (data) => {
-console.log(data);
+setStudentData(data);
+setSubmitStatus(true);
 alert(JSON.stringify(data, null, 2));
 } ) }> 
 
@@ -32,8 +61,13 @@ alert(JSON.stringify(data, null, 2));
         {errors?.regNo && <span  className="errors"> {errors.regNo.message}</span>} <br/>
       </label>
 
-      <label>Full Name   :
-        <input {...register(`firstname`)} type="text" /> 
+      <label>First Name   :
+        <input {...register(`firstName`)} type="text" /> 
+        {errors?.firstname && <span  className="errors"> {errors.firstname.message}</span>} <br/>
+      </label>
+
+      <label>Last Name   :
+        <input {...register(`lastName`)} type="text" /> 
         {errors?.firstname && <span  className="errors"> {errors.firstname.message}</span>} <br/>
       </label>
 
@@ -46,7 +80,6 @@ alert(JSON.stringify(data, null, 2));
       </label> 
       {errors?.gender && <span  className="errors"> {errors.gender.message}</span>} <br/>
       
-
       <input type="submit" value="submit" />
 
       </form>
