@@ -1,6 +1,6 @@
 import {useForm} from 'react-hook-form';
 import {useState, useEffect} from 'react';
-import {useNavigate, useParams, useLocation, useHistory } from 'react-router-dom';
+import {useNavigate, useLocation } from 'react-router-dom';
 
 let renderCount = 0;
 
@@ -35,7 +35,7 @@ else
   setValue("mobileNumber", locationnew.state.mobileNumber)
 }
 
-}, [submitstatus]);
+}, [submitstatus,empdata,locationnew.state,navigate,setValue]);
 
 
   console.log(errors);

@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import {useState, useEffect} from 'react';
 import * as yup from "yup";
 
-import {useNavigate, useParams, useLocation, useHistory } from 'react-router-dom';
+import {useNavigate, useLocation } from 'react-router-dom';
 
 const schema = yup.object({
   regNo: yup.string().required('Reg Number is required'),
@@ -42,7 +42,7 @@ else
   setValue("gender", locationnew.state.gender)
 }
 
-}, [submitstatus]);
+}, [submitstatus, locationnew.state, navigate,setValue,studentdata]);
 
 
     return (
