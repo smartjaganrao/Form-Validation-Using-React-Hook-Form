@@ -1,5 +1,5 @@
-## React Form validation Using React Hook Form
-Live: https://main--magnificent-elf-29cea4.netlify.app/
+## Form validation Using React Hook Form
+Live: https://react-hook-forms.netlify.app/
 
 ## React Form validation Using Yup Library
-Live: https://main--magnificent-elf-29cea4.netlify.app/FormC
+Live: https://react-hook-forms.netlify.app/FormC
