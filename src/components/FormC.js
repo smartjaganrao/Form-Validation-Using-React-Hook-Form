@@ -63,12 +63,12 @@ alert(JSON.stringify(data, null, 2));
 
       <label>First Name   :
         <input {...register(`firstName`)} type="text" /> 
-        {errors?.firstname && <span  className="errors"> {errors.firstname.message}</span>} <br/>
+        {errors?.firstName && <span  className="errors"> {errors.firstName.message}</span>} <br/>
       </label>
 
       <label>Last Name   :
         <input {...register(`lastName`)} type="text" /> 
-        {errors?.firstname && <span  className="errors"> {errors.lastName.message}</span>} <br/>
+        {errors?.lastName && <span  className="errors"> {errors.lastName.message}</span>} <br/>
       </label>
 
       <label>Gender :
