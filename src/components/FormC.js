@@ -68,7 +68,7 @@ alert(JSON.stringify(data, null, 2));
 
       <label>Last Name   :
         <input {...register(`lastName`)} type="text" /> 
-        {errors?.firstname && <span  className="errors"> {errors.firstname.message}</span>} <br/>
+        {errors?.firstname && <span  className="errors"> {errors.lastName.message}</span>} <br/>
       </label>
 
       <label>Gender :
