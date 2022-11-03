@@ -10,10 +10,18 @@ function FormA()
 let navigate = useNavigate();
 const [empdata, setEmpData] = useState();
 const [submitstatus, setSubmitStatus] = useState(false);
+
 const locationnew = useLocation();
 
 const {register, handleSubmit,setValue, formState : {errors}} = useForm(
 );
+
+const firstNameFun = (e) =>
+{
+  console.log(e.target.value);
+}
+
+const [formdata, setFormData] = useState([]);
 
 useEffect(() => 
 {
@@ -51,11 +59,14 @@ else
     {
       setEmpData(data);
       setSubmitStatus(true);
+      
       alert(JSON.stringify(data, null, 2));
+
+      console.log(formdata);
     })}>
 
       <label>First Name:
-        <input {...register(`firstName`, {required : 'FirstName is Required'})} type="text" placeholder="First Name"  /> <br/>    
+        <input {...register(`firstName`, {required : 'FirstName is Required'})} type="text" placeholder="First Name" onChange={firstNameFun} /> <br/>    
         {errors?.firstName && <span  className="errors"> {errors.firstName.message}</span>} <br/>
       </label>
 

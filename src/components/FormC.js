@@ -50,11 +50,11 @@ else
   
   <h3> Student Registration Form using Yup library</h3>
 
-<form onSubmit={handleSubmit ( (data) => {
-setStudentData(data);
-setSubmitStatus(true);
-alert(JSON.stringify(data, null, 2));
-} ) }> 
+    <form onSubmit={handleSubmit ( (data) => {
+    setStudentData(data);
+    setSubmitStatus(true);
+    alert(JSON.stringify(data, null, 2));
+    } ) }> 
 
       <label>Reg Number :
         <input {...register(`regNo`)} type="text" />

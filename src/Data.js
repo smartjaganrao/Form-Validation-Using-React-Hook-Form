@@ -1,27 +1,27 @@
 export const columns = [
   {
     name: "First Name",
-    selector: row => "firstname",
+    selector:  "firstname",
     sortable: true
   },
   {
     name: "Last Name",
-    selector: row => "lastname",
+    selector:  "lastname",
     sortable: true
   },
   {
     name: "Age",
-    selector: row => "age",
+    selector:  "age",
     sortable: true
   },
   {
     name: "Mobile",
-    selector: row => "mobile",
+    selector:  "mobile",
     sortable: true
   },
   {
     name: "Emp Number",
-    selector: row => "empnum",
+    selector: "empnum",
     sortable: true
   }
   

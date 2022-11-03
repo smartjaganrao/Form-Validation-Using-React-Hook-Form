@@ -20,6 +20,10 @@ function Header() {
           <li>
             <Link to="/FormC" >FormC</Link>
           </li>
+
+          <li>
+            <Link to="/childtoparrent" >Child to Parrent</Link>
+          </li>
        
         </ul>
       </nav>

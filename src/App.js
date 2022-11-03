@@ -7,6 +7,7 @@ import FormA from './components/FormA';
 import FormB from './components/FormB';
 import FormC from './components/FormC';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ChildToParrent from './components/ChildToParrent';
 
 function App() {
   return (
@@ -15,10 +16,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Header />}>
-        <Route exact index path="/" element={<CreateForm />} />
+        <Route   path="/" element={<CreateForm />} />
           <Route path="FormA" element={<FormA />} />
           <Route path="FormB" element={<FormB />} />
           <Route path="FormC" element={<FormC />} />
+          <Route path="ChildToParrent" element={<ChildToParrent />} />
         </Route>
       </Routes>
     </BrowserRouter>
