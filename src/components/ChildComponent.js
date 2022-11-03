@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import '../App.css'
 
 function ChildComponent(props) 
 {
@@ -16,7 +17,7 @@ function ChildComponent(props)
     }
 
     return (
-      <div className="">
+      <div className="Child">
             <h3> Child Component</h3>
             
             <form onSubmit={HandleSubmit}>

@@ -21,8 +21,6 @@ const firstNameFun = (e) =>
   console.log(e.target.value);
 }
 
-const [formdata, setFormData] = useState([]);
-
 useEffect(() => 
 {
 
@@ -58,11 +56,9 @@ else
     <form onSubmit={handleSubmit((data) => 
     {
       setEmpData(data);
-      setSubmitStatus(true);
-      
+      setSubmitStatus(true);      
       alert(JSON.stringify(data, null, 2));
-
-      console.log(formdata);
+      console.log(data);
     })}>
 
       <label>First Name:

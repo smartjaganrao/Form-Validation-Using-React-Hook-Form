@@ -20,7 +20,7 @@ function App() {
           <Route path="FormA" element={<FormA />} />
           <Route path="FormB" element={<FormB />} />
           <Route path="FormC" element={<FormC />} />
-          <Route path="ChildToParrent" element={<ChildToParrent />} />
+          <Route path="ChildToParrent" element={<ChildToParrent />} />5
         </Route>
       </Routes>
     </BrowserRouter>

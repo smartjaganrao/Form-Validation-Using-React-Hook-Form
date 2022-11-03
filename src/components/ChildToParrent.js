@@ -1,5 +1,6 @@
 import ChildComponent from "./ChildComponent";
 import {useState} from 'react';
+import '../App.css'
 
 function ChildToParrent() {
 
@@ -11,7 +12,7 @@ function ChildToParrent() {
         }
 
     return (
-      <div className="">
+      <div className="Parrent">
             <h3> Parrent Components</h3>
             <h4> Data Coming From Child: {data}</h4>            
             <ChildComponent onSubmit={getDataFromChild}/>
